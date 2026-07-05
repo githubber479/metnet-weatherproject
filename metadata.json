@@ -1,0 +1,6 @@
+{
+  "name": "MetNET",
+  "description": "Kocaeli Güncel Meteoroloji Gözlemleri ve MGM ALARO Tahmin Modeli",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
