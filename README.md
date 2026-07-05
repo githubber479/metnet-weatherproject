@@ -1,21 +1,53 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# 📱 MetNET V14 Android Projesi - ATILIM Sürümü 🚀
 
-# Run and deploy your AI Studio app
+MetNET, gelişmiş meteorolojik verileri işlemek, analiz etmek ve Android kullanıcılarına yüksek doğrulukla sunmak amacıyla geliştirilmiş bir mobil hava tahmini ve gözlem uygulamasıdır. **V14 ATILIM** sürümüyle birlikte mobil mimari altyapı tamamen modernize edilmiş; daha dinamik, hızlı ve kullanıcı dostu bir deneyim sunmak üzere optimize edilmiştir. ✨
 
-This contains everything you need to run your app locally.
+---
 
-View your app in AI Studio: https://ai.studio/apps/e1ec28f5-12bc-4216-8d66-fe8791ade487
+## 📌 Proje Hakkında ve Temel Amaç 🎯
 
-## Run Locally
+MetNET Android uygulaması, mikro iklim hareketlerinden makro düzeydeki hava sistemlerine kadar geniş bir yelpazedeki verileri mobil cihazlarda akıcı bir şekilde görselleştirmek amacıyla geliştirilmiştir. 🌪️ Bu projenin temel amacı; dağınık haldeki gözlem istasyonları verileri ile yüksek çözünürlüklü radar sinyallerini cihaz üzerinde ve sunucu tarafında işleyerek kullanıcıya anlık bildirimler ve doğru tahminler ulaştırmaktır. 🗺️
 
-**Prerequisites:**  [Android Studio](https://developer.android.com/studio)
+V14 sürümüyle birlikte uygulama, statik veri gösteriminden çıkarak dinamik tahminleme, anlık veri akışı ve modern bileşen tabanlı arayüz mimarisine geçiş yapmıştır. ⚡
 
+---
 
-1. Open Android Studio
-2. Select **Open** and choose the directory containing this project
-3. Allow Android Studio to fix any incompatibilities as it imports the project.
-4. Create a file named `.env` in the project directory and set `GEMINI_API_KEY` in that file to your Gemini API key (see `.env.example` for an example)
-5. Remove this line from the app's `build.gradle.kts` file: `signingConfig = signingConfigs.getByName("debugConfig")`
-6. Run the app on an emulator or physical device
+## 🛠️ Neler Yapıldı ve Mimari Yenilikler ⚙️
+
+### 1. Gözlem ve Radar Sistemlerinin Merkezileştirilmesi 📡
+* 🏢 Kocaeli genelinde aktif olarak çalışan tüm otomatik ve manuel meteoroloji gözlem istasyonları, mobil arayüzde veri karmaşasını önlemek amacıyla tek bir menü altında birleştirildi.
+* 🧠 Derince merkezli olarak konumlandırılan yeni nesil Yapay Zekâ destekli radar sistemi uygulamaya entegre edildi. Sistem, güncel radar verilerini arka planda analiz ederek gökyüzü anomalileri ve anlık yağış yoğunluklarına dair işlevsel ve kısa vadeli tahminler üretir. ⛈️
+
+### 2. Gelişmiş Sayısal Hava Tahmin Modellerinin Entegrasyonu 📈
+Mobil uygulamanın tahmin yeteneklerini artırmak amacıyla küresel ve bölgesel düzeyde başarısını kanıtlamış gelişmiş sayısal hava tahmin modelleri sisteme dahil edilmiştir:
+
+* 🌦️ **MGM ALARO Anlık:** 1.5 km çözünürlüğe sahiptir. Radar ve bulutlanma verileriyle anlık güncellenir. 15 dakika aralıklarla saatlik tahmin üretir ve toplamda 1.5 günlük tahmin sunar.
+* 🌤️ **MGM ALARO Standart:** 4.5 km çözünürlüğe sahiptir. 1 saat aralıklarla 3 günlük tahmin sunar.
+* 🌍 **UKMO İngiltere:** 10 km çözünürlüğe sahiptir. Tüm parametreleri barındırır. Dünyanın en fazla sayısal denklem çözen modeli olduğu için erişimi kısıtlıdır.
+
+---
+
+## 🧰 Teknolojik Altyapı ve Yararlanılan Bileşenler 💻
+
+MetNET Android APK projesi geliştirilirken yüksek performans, düşük pil tüketimi ve akici animasyonlar hedeflenmiştir. 🔋 Projede yararlanılan temel teknolojiler şunlardır:
+
+* ☕ **Dil ve Arayüz Mimarisi:** Uygulama modern Android standartlarına uygun olarak Kotlin diliyle yazılmış ve arayüz tasarımı bileşen odaklı mimariyle (Jetpack Compose) şekillendirilmiştir. 🎨
+* 🔄 **Arka Plan Görevleri ve Veri Akışı:** İstasyon verilerinin ve radar grafiklerinin arka planda donmadan yüklenmesi için asenkron programlama bileşenleri (Coroutines & Flow) kullanılmıştır.
+* 🌐 **Ağ Yönetimi:** MGM API servisleri ve radar veri merkezleri ile iletişim sağlamak, JSON verilerini güvenli şekilde indirmek için gelişmiş ağ kütüphanelerinden (Retrofit) yararlanılmıştır.
+* 💾 **Yerel Veri Tabanı:** Uygulamanın çevrimdışı modda da son alınan tahminleri gösterebilmesi için cihaz içi yerel veri tabanı mimarisi (Room DB) entegre edilmiştir.
+
+---
+
+## 🚀 Kurulum ve Çalıştırma 🛠️
+
+Projeyi yerel geliştirme ortamınızda açmak ve test APK dosyasını derlemek için aşağıdaki adımları takip edebilirsiniz.
+
+### 📋 Gereksinimler
+* Android Studio Jellyfish veya üzeri bir sürüm 💻
+* Android SDK 34 (Android 14) ve üzeri 🤖
+* Java Development Kit (JDK) 17 ☕
+
+### ⚙️ Adımlar
+1. Bu depoyu bilgisayarınıza klonlayın:
+   ```bash
+   git clone [https://github.com/kullanici-adiniz/MetNET-Android.git](https://github.com/kullanici-adiniz/MetNET-Android.git)
